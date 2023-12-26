@@ -1,0 +1,18 @@
+# builds
+build/
+buildrel/
+builddebug/
+out/
+
+# VS Code
+.vscode/
+.vs/
+
+# Cquery
+.cquery_cache
+
+.cache
+
+# Source trail 
+*.srctrlbm
+*.srctrldb
