@@ -3,7 +3,7 @@
 # TODO 1: Add a library called MathFunctions with sources MathFunctions.cxx
 # and mysqrt.cxx
 # Hint: You will need the add_library command
-
+# 添加库MathFunctions
 add_library(MathFunctions MathFunctions.cxx)
 # target_sources(MathFunctions.cxx mysqrt.cxx)
 # TODO 7: Create a variable USE_MYMATH using option and set default to ON
@@ -11,10 +11,13 @@ option(USE_MYMATH "Use tutorial provided math implementation" ON)
 # TODO 8: If USE_MYMATH is ON, use target_compile_definitions to pass
 # USE_MYMATH as a precompiled definition to our source files
 if (USE_MYMATH)
+#添加预处理宏定义
   target_compile_definitions(MathFunctions PRIVATE "USE_MYMATH")
+  # # SqrtLibrary
   add_library(SqrtLibrary STATIC
               mysqrt.cxx
               )
+    # 添加库SqrtLibrary到MathFunctions
   target_link_libraries(MathFunctions PRIVATE SqrtLibrary)
 endif()
 # TODO 12: When USE_MYMATH is ON, add a library for SqrtLibrary with
